@@ -102,6 +102,7 @@ namespace mqlib {
         serial.writeLine('width:'+width.toString())
         for (let y = 0; y < grid.length; y++) {
             for (let x = 0; x < width; x++) {
+                serial.writeLine('y:' + y.toString()+',x:'+x.toString())
                 let pixel = grid[y][x]
                 if (pixel) {
                     RBTFT18.drawPixel(x + xStart, y + yStart, getColorByStr(pixel))
