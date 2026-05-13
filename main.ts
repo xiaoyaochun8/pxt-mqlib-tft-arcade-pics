@@ -94,7 +94,12 @@ namespace mqlib {
             imgStr = imTft6
         }
         const grid = convertToGrid(imgStr);
-        const width = grid[0].length <= 127 ? grid[0].length : 127;
+        // const width = grid[0].length <= 127 ? grid[0].length : 127;
+        let width = grid[0].length
+        if(width > 127){
+            width = 127
+        }
+        serial.writeLine('width:'+width.toString())
         for (let y = 0; y < grid.length; y++) {
             for (let x = 0; x < width; x++) {
                 let pixel = grid[y][x]
