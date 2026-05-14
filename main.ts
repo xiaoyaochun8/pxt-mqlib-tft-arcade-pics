@@ -40,55 +40,56 @@ namespace mqlib {
         //% block="飞机"
         imPlane,
     }
+    let bgColor = 0
     function getColorByStr(s: string): number {
         //颜色 1 (白)
         if (s == '1') {
             return 0xFFFF
-            //颜色 2 (红)
+        //颜色 2 (红)
         } else if (s == '2') {
             return 0x001F
-            //颜色 3 (粉红色)
+        //颜色 3 (粉红色)
         } else if (s == '3') {
             return 0xC49F
-            //颜色 4 (橙)
+        //颜色 4 (橙)
         } else if (s == '4') {
             return 0x341F
-            //颜色 5 (黄)
+        //颜色 5 (黄)
         } else if (s == '5') {
             return 0x07FF
-            //颜色 6 (teal)
+        //颜色 6 (teal)
         } else if (s == '6') {
             return 0xA4E4
-            //颜色 7 (绿)
+        //颜色 7 (绿)
         } else if (s == '7') {
             return 0x56EF
-            //颜色 8 (蓝)
+        //颜色 8 (蓝)
         } else if (s == '8') {
             return 0xA9E0
-            //颜色 9 (浅蓝色)
+        //颜色 9 (浅蓝色)
         } else if (s == '9') {
             return 0xFF90
-            //颜色 10 (紫)
+        //颜色 10 (紫)
         } else if (s == 'a') {
             return 0xC171
-            //颜色 11 (淡紫色)
+        //颜色 11 (淡紫色)
         } else if (s == 'b') {
             return 0x9C14
-            //颜色 12 (dark purple)
+        //颜色 12 (dark purple)
         } else if (s == 'c') {
             return 0x6A0B
-            //颜色 13 (tan)
+        //颜色 13 (tan)
         } else if (s == 'd') {
             return 0xC67C
-            //颜色 14 (棕色)
+        //颜色 14 (棕色)
         } else if (s == 'e') {
             return 0x3A32
-            //颜色 15 (黑色)
+        //颜色 15 (黑色)
         } else if (s == 'f') {
             return 0x0000
-            //颜色 0 (透明度)
+        //颜色 0 (透明度)
         } else {
-            return 0xCE59
+            return bgColor
         }
     }
     /**
@@ -118,11 +119,17 @@ namespace mqlib {
         } else if (im == TftArcade.imTft5) {
             imgStr = imTft5
         } else if (im == TftArcade.imBg) {
-            //todo
+            bgColor = 0xFF90
+            RBTFT18.drawRectangle(0, 0, 128, 160, bgColor)
+            return
         } else if (im == TftArcade.imBg2) {
-            //todo
+            bgColor = 0x56EF
+            RBTFT18.drawRectangle(0, 0, 128, 160, bgColor)
+            return
         } else if (im == TftArcade.imBg3) {
-            //todo
+            bgColor = 0x341F
+            RBTFT18.drawRectangle(0, 0, 128, 160, bgColor)
+            return
         } else if (im == TftArcade.imCloud) {
             imgStr = imCloud
         } else if (im == TftArcade.imFlower) {
