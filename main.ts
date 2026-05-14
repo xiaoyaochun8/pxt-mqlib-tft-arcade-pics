@@ -10,6 +10,35 @@ namespace mqlib {
         imTft4,
         //% block="武士"
         imTft5,
+
+        //% block="背景1"
+        imBg,
+        //% block="背景2"
+        imBg2,
+        //% block="背景3"
+        imBg3,
+        //% block="白云"
+        imCloud,
+        //% block="花"
+        imFlower,
+        //% block="草"
+        imGrass,
+        //% block="树"
+        imTree,
+        //% block="狗"
+        imDog,
+        //% block="猴"
+        imMonkey,
+        //% block="恐龙"
+        imDragon,
+        //% block="鸟"
+        imBird,
+        //% block="房子"
+        imHouse,
+        //% block="汽车"
+        imCar,
+        //% block="飞机"
+        imPlane,
     }
     function getColorByStr(s: string): number {
         //颜色 1 (白)
