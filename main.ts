@@ -117,6 +117,34 @@ namespace mqlib {
             imgStr = imTft4
         } else if (im == TftArcade.imTft5) {
             imgStr = imTft5
+        } else if (im == TftArcade.imBg) {
+            //todo
+        } else if (im == TftArcade.imBg2) {
+            //todo
+        } else if (im == TftArcade.imBg3) {
+            //todo
+        } else if (im == TftArcade.imCloud) {
+            imgStr = imCloud
+        } else if (im == TftArcade.imFlower) {
+            imgStr = imFlower
+        } else if (im == TftArcade.imGrass) {
+            imgStr = imGrass
+        } else if (im == TftArcade.imTree) {
+            imgStr = imTree
+        } else if (im == TftArcade.imDog) {
+            imgStr = imDog
+        } else if (im == TftArcade.imMonkey) {
+            imgStr = imMonkey
+        } else if (im == TftArcade.imDragon) {
+            imgStr = imDragon
+        } else if (im == TftArcade.imBird) {
+            imgStr = imBird
+        } else if (im == TftArcade.imHouse) {
+            imgStr = imHouse
+        } else if (im == TftArcade.imCar) {
+            imgStr = imCar
+        } else if (im == TftArcade.imPlane) {
+            imgStr = imPlane
         }
         const grid = convertToGrid(imgStr);
         // const width = grid[0].length <= 127 ? grid[0].length : 127;
@@ -124,10 +152,8 @@ namespace mqlib {
         if(width > 127){
             width = 127
         }
-        serial.writeLine('width:'+width.toString())
         for (let y = 0; y < grid.length; y++) {
             for (let x = 0; x < width; x++) {
-                serial.writeLine('y:' + y.toString()+',x:'+x.toString())
                 let pixel = grid[y][x]
                 if (pixel) {
                     RBTFT18.drawPixel(x + xStart, y + yStart, getColorByStr(pixel))
@@ -328,11 +354,31 @@ namespace mqlib {
     ........................
     ........................
     `;
-    //背景图
-    const imTft6 = `
-    `;
+    
     //鸡腿
     const imTft999 = `
     `;
 
+    const imCloud = `
+    `;
+    const imFlower = `
+    `;
+    const imGrass = `
+    `;
+    const imTree = `
+    `;
+    const imDog = `
+    `;
+    const imMonkey = `
+    `;
+    const imDragon = `
+    `;
+    const imBird = `
+    `;
+    const imHouse = `
+    `;
+    const imCar = `
+    `;
+    const imPlane = `
+    `;
 }
